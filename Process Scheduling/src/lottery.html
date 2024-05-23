@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/lottery.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <title>Lottery Scheduling</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../Index/index.html#pschedule">Go back</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 style="font-family: 'Courier New', Courier, monospace;">Lottery Scheduling</h1>
+            <p>Enter the process details below:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Process ID</th>
+                        <th>Tickets</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="pid1"></td>
+                        <td><input type="number" id="tickets1"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="pid2"></td>
+                        <td><input type="number" id="tickets2"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="pid3"></td>
+                        <td><input type="number" id="tickets3"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="pid4"></td>
+                        <td><input type="number" id="tickets4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="pid5"></td>
+                        <td><input type="number" id="tickets5"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="submit" id="run" class="btn btn-primary" style="margin-left: 36px; float: left;" onclick="schedule()">Schedule</button><br><br>
+
+            <table id="output">
+                <thead>
+                    <tr>
+                        <th>Process ID</th>
+                        <th>Tickets</th>
+                        <th>Total Execution Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Gantt Chart -->
+    <div style="margin-top: 150px;">
+        <h2 id ="chart-header" style="text-align:center;"></h2>
+        <br />
+        <div id="gantt" style="width: 800px;float: left;"></div>
+        <div id="timer"></div>
+        <br /><br />
+        <div>
+            <div style="width: 50%; text-align:center;float:left; font-size: 20px;" id="awt1"></div>
+            <div style="width: 50%; text-align:center;float:left; font-size: 20px;" id="atat1"></div>
+        </div>
+    </div>
+    <br>
+</body>
+</html>
